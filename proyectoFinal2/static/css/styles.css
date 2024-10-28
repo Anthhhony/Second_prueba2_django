@@ -1,0 +1,11 @@
+.TITULOBIG{
+    background-color: aquamarine;
+    color: rgb(0, 0, 100);
+    font-size: 30px;
+    padding: 20px;
+}
+th, td{
+    padding: 10px;
+    border: solid rgb(0, 0, 62);
+    color: rgb(0, 0, 114);
+}

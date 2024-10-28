@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="TITULOBIG"><h1>REGISTRO DE USUARIOS</h1></div>
+    {% if registro %}
+    <table>
+        <thead>
+            <tr>
+                <th>RUT</th>
+                <th>NOMBRE</th>
+                <th>TELEFONO</th>
+                <th>EDAD</th>
+                <th>CORREO</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for dato in registro %}
+            <tr>
+                <td>{{dato.rut}}</td>
+                <td>{{dato.nombre}}</td>
+                <td>{{dato.telefono}}</td>
+                <td>{{dato.edad}}</td>
+                <td>{{dato.correo}}</td>
+                <td><a href="/eliminar/{{dato.id}}">Eliminar</a></td>
+                <td><a href="/actualizar/{{dato.id}}">Actualizar</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button><a href="../registrar">REGISTRAR</a></button>
+
+    {% else %}
+
+    <div><h1>NO HAY REGISTROS!!</h1></div>
+
+    <button><a href="../registrar">REGISTRAR</a></button>
+
+    {% endif %}
+
+</body>
+</html>
